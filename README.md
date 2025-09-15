@@ -28,9 +28,9 @@ This file will generate 5 PNG charts inside the charts/ folder.
 ## Project Structure
 ```
 MiniProject 1 - Illia Ivanov/
-  |-  README.md
-    requirements.txt
-    .gitignore
-    main.py
-    charts/
+  |- README.md
+  |- equirements.txt
+  |- .gitignore
+  |- main.py
+  |- charts/
 ```
