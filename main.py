@@ -28,3 +28,12 @@ def save_chart(stock: str, prices: np.ndarray):
     plt.tight_layout()
     plt.savefig(charts_dir / f"{stock}.png")
     plt.close()
+
+def main():
+    for stock in STOCKS:
+        prices = get_last_10_closes(stock)
+        if prices.size == 10:
+            save_chart(stock, prices)
+
+if __name__ == "__main__":
+    main()
