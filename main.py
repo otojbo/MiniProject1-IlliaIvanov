@@ -16,3 +16,15 @@ def get_last_10_closes(stock: str) -> np.ndarray:
     history = yf.Ticker(stock).history(period="20d", interval="1d")
     closes = history["Close"].dropna().tail(10).tolist()
     return np.array(closes, dtype=float)
+
+def save_chart(stock: str, prices: np.ndarray):
+    days = range(1, len(prices) + 1)
+
+    plt.figure()
+    plt.plot(days, prices, marker="o")
+    plt.title(stock)
+    plt.xlabel("Trading Days")
+    plt.ylabel("Closing Price")
+    plt.tight_layout()
+    plt.savefig(charts_dir / f"{stock}.png")
+    plt.close()
